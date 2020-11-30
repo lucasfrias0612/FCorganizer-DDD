@@ -71,13 +71,6 @@ Posicionarse sobre la ruta destino elegida y ejecutar el jar generado como cualq
 ### Screenshot
 ![screenshoot](https://i.ibb.co/rdZvCzq/fc.jpg)  
 
-### Contacto
-
-Puedes enviar un mail a alguna de las siguientes direcciones : 
-
-- fcorinaldesi@unpaz.edu.ar
-- fernandocorinaldesi@hotmail.com
-
 ### Licencia
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
