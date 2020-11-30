@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: organizer-ddd
+      POSTGRES_USER: lucasfrias
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgresql-data:/var/lib/postgresql/data

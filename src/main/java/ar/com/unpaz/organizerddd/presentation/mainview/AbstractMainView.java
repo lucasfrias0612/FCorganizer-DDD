@@ -86,7 +86,7 @@ public abstract class AbstractMainView<E> extends JFrame implements MainViewOper
         MenuItem exit=new MenuItem("Salir");
         exit.addActionListener(exitListener);
         popup.add(exit);
-        TrayIcon trayIcon=new TrayIcon(loadIconImage(), "Fc Organicer",popup);
+        TrayIcon trayIcon=new TrayIcon(loadIconImage(), "Organicer",popup);
         trayIcon.setImageAutoSize(true);
 		this.addWindowStateListener(new WindowStateListener() {
 

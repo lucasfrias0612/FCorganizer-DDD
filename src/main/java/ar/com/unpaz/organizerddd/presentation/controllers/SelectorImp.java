@@ -5,7 +5,6 @@ import ar.com.unpaz.organizerddd.application.services.AppServicePass;
 import ar.com.unpaz.organizerddd.application.services.AppServices;
 import ar.com.unpaz.organizerddd.domain.entitys.Password;
 import ar.com.unpaz.organizerddd.domain.entitys.User;
-import ar.com.unpaz.organizerddd.transversalinfrastructure.EnviromentVariables;
 import ar.com.unpaz.organizerddd.transversalinfrastructure.login.LoginController;
 
 public class SelectorImp implements Selector{

@@ -36,7 +36,7 @@ public class MyTitleBar extends JLabel {
 			setIcon(new ImageIcon(image));
 			setPreferredSize(new Dimension(900, 200));
 			setBackground(new Color(47, 62, 80));
-			setText("FC Organizer");
+			setText("Organizer");
 			setFont(new Font("Serif", Font.BOLD,32));
 			
 		}
@@ -44,7 +44,7 @@ public class MyTitleBar extends JLabel {
 		if (s.contentEquals("admin")) {
 			setHorizontalAlignment(JLabel.LEFT);
 			setFont(new Font("Serif", Font.BOLD,24));
-			setText("FC Organizer");
+			setText("Organizer");
 			setPreferredSize(new Dimension(900, 40));
 			setBackground(new Color(51,103,214));
 			

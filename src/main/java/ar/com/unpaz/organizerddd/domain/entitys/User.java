@@ -47,7 +47,7 @@ public class User extends Entity<User>{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSecondName() {
+	public String getLastName() {
 		return secondName;
 	}
 	public void setSecondName(String secondName) {

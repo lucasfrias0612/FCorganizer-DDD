@@ -1,4 +1,4 @@
-package ar.com.unpaz.organizerddd.infrastructure;
+package ar.com.unpaz.organizerddd.infrastructure.db.hypersql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,9 @@ import java.util.List;
 import ar.com.unpaz.organizerddd.domain.entitys.User;
 import ar.com.unpaz.organizerddd.domain.repositorycontracts.IRepository;
 import ar.com.unpaz.organizerddd.domain.specifications.Specification;
+import ar.com.unpaz.organizerddd.infrastructure.db.DbConection;
 
-public class UserRepositoryImp implements IRepository<User>{
+public class HypersqlUserRepository implements IRepository<User>{
 
 	@Override
 	public List<User> get() {
@@ -48,7 +49,7 @@ public class UserRepositoryImp implements IRepository<User>{
 			PreparedStatement ps = con.prepareStatement(insertUser);
 			ps.setInt(1, user.getDni());
 			ps.setString(2, user.getName());
-			ps.setString(3, user.getSecondName());
+			ps.setString(3, user.getLastName());
 			ps.setString(4, user.getUser());
 			ps.setString(5, user.getPass());
 			ps.executeUpdate();
@@ -66,7 +67,7 @@ public class UserRepositoryImp implements IRepository<User>{
 		try {
 			PreparedStatement ps = con.prepareStatement(updateUser);
 			ps.setString(1, user.getName());
-			ps.setString(2, user.getSecondName());
+			ps.setString(2, user.getLastName());
 			ps.setString(3, user.getUser());
 			ps.setString(4, user.getPass());
 			ps.setInt(5, user.getDni());

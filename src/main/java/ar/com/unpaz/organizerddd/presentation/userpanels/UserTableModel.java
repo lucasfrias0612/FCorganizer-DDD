@@ -9,7 +9,7 @@ import ar.com.unpaz.organizerddd.domain.entitys.User;
 public class UserTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private List<User> user;
-	private static String[] COLUMNAS = { "Dni", "Nombre", "Apellido", "Usuario", "Contraseña"};
+	private static String[] COLUMNAS = { "DNI", "Nombre", "Apellido", "Usuario", "Contraseña"};
 
 	public UserTableModel(List<User> user) {
 		super();
@@ -46,7 +46,7 @@ public class UserTableModel extends AbstractTableModel {
 			retorno = u.getName();
 			break;
 		case 2:
-			retorno = u.getSecondName();
+			retorno = u.getLastName();
 			break;
 		case 3:
 			retorno = u.getUser();

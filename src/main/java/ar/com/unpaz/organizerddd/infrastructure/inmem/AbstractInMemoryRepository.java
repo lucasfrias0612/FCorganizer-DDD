@@ -1,8 +1,9 @@
-package ar.com.unpaz.organizerddd.domain.repositorycontracts;
+package ar.com.unpaz.organizerddd.infrastructure.inmem;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.com.unpaz.organizerddd.domain.repositorycontracts.IRepository;
 import ar.com.unpaz.organizerddd.domain.specifications.Specification;
 
 

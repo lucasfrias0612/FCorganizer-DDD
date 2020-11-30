@@ -1,4 +1,4 @@
-package ar.com.unpaz.organizerddd.domain.repositorycontracts;
+package ar.com.unpaz.organizerddd.infrastructure.inmem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ public class InMemoryUserRepository extends AbstractInMemoryRepository<User>{
 		      User user = userlist.get(key);
 		      int dni=user.getDni();
 		      String name = user.getName();
-		      String secondName = user.getSecondName();
+		      String secondName = user.getLastName();
 		      String username = user.getUser();
 		      String pass = user.getPass();
 		      result.add(new User(dni,name,secondName,username,pass));

@@ -13,7 +13,6 @@ import ar.com.unpaz.organizerddd.presentation.custom.SideButton;
 import ar.com.unpaz.organizerddd.presentation.passpanels.PassPanel;
 import ar.com.unpaz.organizerddd.transversalinfrastructure.login.LoginController;
 
-
 public class MainView extends AbstractMainView<Password> {
 	/**
 	 * 
@@ -22,7 +21,7 @@ public class MainView extends AbstractMainView<Password> {
 	private PassPanel passpanel;
 	private SideButton passButton;
 	private LoginController login;
-	
+
 	public void initListener() {
 
 		passButton.addActionListener(e -> {
@@ -30,29 +29,28 @@ public class MainView extends AbstractMainView<Password> {
 			passButton.setBackground(Color.DARK_GRAY);
 
 		});
-	
+
 		aboutButton.addActionListener(e -> {
 			cardLayout.show(cardPanel, "about");
 		});
 		exitButton.addActionListener(e -> {
 			login.closeView();
 			dispose();
-			
+
 		});
 		logOutButton.addActionListener(e -> {
 			dispose();
 			passpanel.removeAllPasswords();
 			login.startView();
 		});
-	
-				
 
 	}
+
 	public JPanel createCenter() {
 		cardPanel = new JPanel();
 		cardPanel.setLayout(new CardLayout());
-		cardPanel.add(new AboutView(),"about");
-		cardPanel.add(passpanel=new PassPanel(),"pass");
+		cardPanel.add(new AboutView(), "about");
+		cardPanel.add(passpanel = new PassPanel(), "pass");
 		cardLayout = (CardLayout) cardPanel.getLayout();
 		return cardPanel;
 
@@ -70,40 +68,39 @@ public class MainView extends AbstractMainView<Password> {
 		pane.add(aboutButton);
 		pane.add(logOutButton);
 		pane.add(exitButton);
-		pane.setBackground(new Color(255,255,255));
-		
+		pane.setBackground(new Color(255, 255, 255));
+
 		return pane;
 	}
 
-	
 	@Override
 	public void setVisible() {
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
-
 	@Override
 	public void setPanelController(IController<Password> controller) {
 		// TODO Auto-generated method stub
 		this.passpanel.setController(controller);
 	}
+
 	@Override
 	public void loadPanelData() {
 		// TODO Auto-generated method stub
 		this.passpanel.loadPassList();
 	}
+
 	@Override
 	public void updatePanelData() {
 		// TODO Auto-generated method stub
 		this.passpanel.updateFromDb();
 	}
+
 	@Override
 	public void setLogOut(LoginController login) {
 		// TODO Auto-generated method stub
-		this.login=login;
+		this.login = login;
 	}
-	
-	
-	
+
 }

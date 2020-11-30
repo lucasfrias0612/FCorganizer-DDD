@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 import ar.com.unpaz.organizerddd.domain.entitys.User;
-import ar.com.unpaz.organizerddd.locator.Context;
 import ar.com.unpaz.organizerddd.presentation.controllers.IController;
 import ar.com.unpaz.organizerddd.presentation.custom.Fonts;
 import ar.com.unpaz.organizerddd.presentation.custom.MyDialogBar;

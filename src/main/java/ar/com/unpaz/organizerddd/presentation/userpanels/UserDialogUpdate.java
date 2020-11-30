@@ -12,6 +12,7 @@ public class UserDialogUpdate extends UserDialog{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	public UserDialogUpdate() {
 		
 	}
@@ -41,7 +42,7 @@ public class UserDialogUpdate extends UserDialog{
 		this.dniField.setText(String.valueOf(user.getDni()));
 		this.dniField.setEditable(false); 
 		this.nameField.setText(user.getName());
-		this.secondNameField.setText(user.getSecondName());
+		this.secondNameField.setText(user.getLastName());
 		this.userField.setText(user.getUser());
 		this.passField.setText(user.getPass());
 	}

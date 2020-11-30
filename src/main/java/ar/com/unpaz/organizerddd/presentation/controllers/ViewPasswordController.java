@@ -7,16 +7,10 @@ import ar.com.unpaz.organizerddd.presentation.validator.IValidator;
 
 public class ViewPasswordController extends ViewAbstractController<Password> {
 
-	public ViewPasswordController(
-	AppServices<Password> appservice, 
-	MainViewOperations<Password> mainview,
-	IValidator<Password> frontValidator) {
-		
-	super(appservice,
-		  mainview,
-		  frontValidator);
-		
-		
+	public ViewPasswordController(AppServices<Password> appservice, MainViewOperations<Password> mainview,
+			IValidator<Password> frontValidator) {
+
+		super(appservice, mainview, frontValidator);
 	}
 
 	@Override
@@ -24,7 +18,5 @@ public class ViewPasswordController extends ViewAbstractController<Password> {
 		// TODO Auto-generated method stub
 		mainview.setController(this);
 	}
-
-	
 
 }

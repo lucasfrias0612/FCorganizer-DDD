@@ -19,9 +19,9 @@ import javax.swing.border.TitledBorder;
 
 public class AboutView extends JPanel {
 
-	private static final String FER_LINKEDIN_URL = "https://ar.linkedin.com/in/fernando-corinaldesi-2a839b175";
-	private static final String FER_GITHUB_URL = "https://github.com/fernandocorinaldesi";
-	private static final String FER_FACEBOOK_URL = "https://www.facebook.com/fernando.corinaldesi";
+	private static final String FER_LINKEDIN_URL = "https://www.linkedin.com/in/lucasmatiasfrias";
+	private static final String FER_GITHUB_URL = "https://github.com/lucasfrias0612";
+	private static final String FER_FACEBOOK_URL = "https://www.facebook.com/lucas.m.frias";
 	private static final long serialVersionUID = 1L;
 	private Font f = new Font("Serif", Font.BOLD,14);
 
@@ -35,7 +35,7 @@ public class AboutView extends JPanel {
 
 	private JPanel createNorthPane() {
 		JPanel panel = new JPanel();
-		JLabel labelTitle = new JLabel("FC Organizer");
+		JLabel labelTitle = new JLabel("Organizer");
 		labelTitle.setFont(new Font("Times New Roman",Font.BOLD,28));
 		labelTitle.setForeground(new Color(169,173,177));
 		panel.setBackground(Color.WHITE);
@@ -71,7 +71,7 @@ public class AboutView extends JPanel {
 
 	private JPanel whatsapp() {
 		JPanel panel = new JPanel();
-		JLabel label = new JLabel("Whatsapp : 11-2829-6699");
+		JLabel label = new JLabel("Whatsapp : 11-59142277");
 		panel.add(label);
 		panel.setBackground(Color.WHITE);
 		return panel;
@@ -79,7 +79,7 @@ public class AboutView extends JPanel {
 
 	private JPanel name() {
 		JPanel panel = new JPanel();
-		JLabel label = new JLabel("Desarrollador : Fernando Corinaldesi");
+		JLabel label = new JLabel("Desarrollador : Lucas Frías");
 		panel.add(label);
 		panel.setBackground(Color.WHITE);
 		return panel;
@@ -95,7 +95,7 @@ public class AboutView extends JPanel {
 
 	private JPanel lenguaje() {
 		JPanel panel = new JPanel();
-		JLabel label = new JLabel("Lenguaje : JavaSE8");
+		JLabel label = new JLabel("Lenguaje : JavaSE 11");
 		panel.add(label);
 		panel.setBackground(Color.WHITE);
 		return panel;
@@ -103,7 +103,7 @@ public class AboutView extends JPanel {
 
 	private JPanel db() {
 		JPanel panel = new JPanel();
-		JLabel label = new JLabel("Base de datos : HYPER-SQL");
+		JLabel label = new JLabel("Base de datos : Postgre-SQL");
 		panel.add(label);
 		panel.setBackground(Color.WHITE);
 		return panel;
@@ -149,8 +149,8 @@ public class AboutView extends JPanel {
 		JPanel panel = new JPanel();
 		JLabel labelName = new JLabel("Facebook : ");
 		JLabel labelFer = new JLabel(new ImageIcon(getClass().getResource("/images/facebook.png")));
-		labelName.setToolTipText(FER_FACEBOOK_URL);
-		labelName.addMouseListener(new MouseAdapter() {
+		labelFer.setToolTipText(FER_FACEBOOK_URL);
+		labelFer.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				openURI(labelName.getToolTipText());

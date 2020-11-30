@@ -1,4 +1,4 @@
-package ar.com.unpaz.organizerddd.infrastructure;
+package ar.com.unpaz.organizerddd.infrastructure.db.hypersql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,9 @@ import java.util.List;
 import ar.com.unpaz.organizerddd.domain.entitys.Password;
 import ar.com.unpaz.organizerddd.domain.repositorycontracts.IRepository;
 import ar.com.unpaz.organizerddd.domain.specifications.Specification;
+import ar.com.unpaz.organizerddd.infrastructure.db.DbConection;
 
-public class PasswordRepositoryImp implements IRepository<Password> {
+public class HypersqlPasswordRepository implements IRepository<Password> {
 
 	@Override
 	public List<Password> get() {

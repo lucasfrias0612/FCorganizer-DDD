@@ -11,12 +11,13 @@ import ar.com.unpaz.organizerddd.application.services.AppServices;
 import ar.com.unpaz.organizerddd.domain.entitys.Password;
 import ar.com.unpaz.organizerddd.domain.entitys.User;
 import ar.com.unpaz.organizerddd.domain.repositorycontracts.IRepository;
-import ar.com.unpaz.organizerddd.domain.repositorycontracts.InMemoryPasswordRepository;
-import ar.com.unpaz.organizerddd.domain.repositorycontracts.InMemoryUserRepository;
 import ar.com.unpaz.organizerddd.domain.services.DomainPasswordServices;
 import ar.com.unpaz.organizerddd.domain.services.DomainUserService;
 import ar.com.unpaz.organizerddd.domain.services.IDomainServices;
-import ar.com.unpaz.organizerddd.locator.Context;
+import ar.com.unpaz.organizerddd.infrastructure.db.postgresql.PostgreslqPasswordRepository;
+import ar.com.unpaz.organizerddd.infrastructure.db.postgresql.PostgreslqUserRepository;
+import ar.com.unpaz.organizerddd.infrastructure.inmem.InMemoryPasswordRepository;
+import ar.com.unpaz.organizerddd.infrastructure.inmem.InMemoryUserRepository;
 import ar.com.unpaz.organizerddd.presentation.controllers.IController;
 import ar.com.unpaz.organizerddd.presentation.controllers.Selector;
 import ar.com.unpaz.organizerddd.presentation.controllers.SelectorImp;
@@ -34,10 +35,6 @@ import ar.com.unpaz.organizerddd.transversalinfrastructure.EnviromentVariables;
 import ar.com.unpaz.organizerddd.transversalinfrastructure.login.LoginController;
 import ar.com.unpaz.organizerddd.transversalinfrastructure.login.LoginControllerImp;
 
-/**
- * Hello world!
- *
- */
 public class EntryPoint {
 	public static void main(String[] args) {
 		/*
@@ -60,54 +57,36 @@ public class EntryPoint {
 		}
 		EventQueue.invokeLater(() -> {
 
-			///////// COMPOSITE ROOT///////
-
-			// PESISTENCE INFRAESTRUCTURE
-			IRepository<Password> passwordrepository=new InMemoryPasswordRepository();
-			IRepository<User> userrepository=new InMemoryUserRepository();
-
-			
+			IRepository<Password> passwordrepository = new PostgreslqPasswordRepository();
+			IRepository<User> userrepository = new PostgreslqUserRepository();
 
 			if (userrepository instanceof InMemoryUserRepository
 					&& passwordrepository instanceof InMemoryPasswordRepository) {
 				EnviromentVariables.INMEMORY = true;
 			}
 
-			// DOMAIN
-			// Domainservices
 			IDomainServices<Password> passdomainservices = new DomainPasswordServices();
 			IDomainServices<User> userdomainservices = new DomainUserService();
 
-			// APPLICATION
 			AppServices<Password> appservicepass = new AppServicePass(passwordrepository, passdomainservices);
 			AppServices<User> appserviceuser = new AppServiceUser(userrepository, userdomainservices);
 
-			// PRESENTACION
-
-			// Front validator
 			IValidator<Password> passfrontValidator = new PasswordFrontValidator();
 			IValidator<User> userfrontValidator = new UserFrontValidator();
 
-			// main view
-			MainViewOperations<Password> mainview=new MainView();
-			MainViewOperations<User> adminview=new AdminView();
+			MainViewOperations<Password> mainview = new MainView();
+			MainViewOperations<User> adminview = new AdminView();
 
-			
-
-			// view controller
 			IController<Password> viewpasscontroller = new ViewPasswordController(appservicepass, mainview,
 					passfrontValidator);
 			IController<User> viewadmincontroller = new ViewAdminController(appserviceuser, adminview,
 					userfrontValidator);
 
-			// selector de vista(usuarios o admin)
 			Selector selector = new SelectorImp(viewpasscontroller, viewadmincontroller, appserviceuser,
 					appservicepass);
 
-			LoginViewOperations loginview=new LoginView();
-			
+			LoginViewOperations loginview = new LoginView();
 
-			// TRANSVERSAL INFRAESTRUCTURE
 			LoginController logincontroller = new LoginControllerImp(loginview, selector);
 
 			logincontroller.startView();

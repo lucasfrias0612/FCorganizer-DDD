@@ -38,7 +38,7 @@ Detalles generales y de diseño de la App:
 ### Dependencias 
 
  - Swingx
- - Hyper-sql
+ - PostgeSQL
 
 ### Diseño   
 
@@ -67,7 +67,7 @@ A continuacion se enumeraran y explicaran los pasos para desplegar la aplicacion
 Desde la consola ejecutar el comando git clone https://github.com/fernandocorinaldesi/FCorganizer-DDD.git  
 ![screenshoot](https://i.ibb.co/VNPLVjy/consoleclone.jpg) 
 
-#### 2- Importar el repositorio a eclipse  
+#### 2- Importar el repositorio a eclipse 
 Ejecutar eclipse  y en la pestaña file elegir import,luego en la siguiente ventana seleccionar el directorio donde fue descargado el codigo fuente y apretar finish  
 ![screenshoot](https://i.ibb.co/wQS59tR/paso2.jpg)
 

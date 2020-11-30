@@ -10,11 +10,11 @@ import org.junit.Test;
 import ar.com.unpaz.organizerddd.domain.entitys.Password;
 import ar.com.unpaz.organizerddd.domain.entitys.User;
 import ar.com.unpaz.organizerddd.domain.repositorycontracts.IRepository;
-import ar.com.unpaz.organizerddd.domain.repositorycontracts.InMemoryPasswordRepository;
-import ar.com.unpaz.organizerddd.domain.repositorycontracts.InMemoryUserRepository;
 import ar.com.unpaz.organizerddd.domain.services.DomainPasswordServices;
 import ar.com.unpaz.organizerddd.domain.services.DomainUserService;
 import ar.com.unpaz.organizerddd.domain.services.IDomainServices;
+import ar.com.unpaz.organizerddd.infrastructure.inmem.InMemoryPasswordRepository;
+import ar.com.unpaz.organizerddd.infrastructure.inmem.InMemoryUserRepository;
 
 public class AppServiceTest {
 	private IRepository<Password> passwordrepository;

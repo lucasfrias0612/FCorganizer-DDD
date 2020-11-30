@@ -55,9 +55,9 @@ public class LoginView extends JFrame implements LoginViewOperations{
 		//userText.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
           //userText.setContentAreaFilled(false);
         passwordText = new JPasswordField ();
-		JLabel userLabel = new JLabel("Ingresar Usuario");
+		JLabel userLabel = new JLabel("Usuario");
         userLabel.setForeground(new Color(0,128,255));
-		JLabel passwordLabel = new JLabel("Ingresar Contraseña");
+		JLabel passwordLabel = new JLabel("Contraseña");
 		passwordLabel.setForeground(new Color(0,128,255));
 		
 		pane.setBackground(new Color(255,255,255));
