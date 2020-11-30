@@ -3,17 +3,6 @@
 
 # Empezando con Primera practica en DDD para laboratorio de software
 
-## Tabla de contenidos
-- [Empezando](#Empezando)
-  - [Requerimientos](#Requerimientos)
-  - [Dependencias](#Dependencias)
-  - [Diseño](#Diseño)  
-  - [Despliegue](#Despliegue)
-  - [Screenshot](#Screenshot)
-  - [Contacto](#Contacto)
-  - [Licencia](#Licencia)
- 
-
 ### Empezando
 La idea de este repo es que sea una primera practica en DDD, para ello se desarrollo una simple aplicacion que guarda contraseñas, con datos de usuario,password y sitio, similar al que utiliza chrome, con la capacidad de crear multiples usuarios.
 
@@ -38,7 +27,7 @@ Detalles generales y de diseño de la App:
 ### Dependencias 
 
  - Swingx
- - PostgeSQL
+ - PostgreSQL
 
 ### Diseño   
 
